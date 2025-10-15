@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Serverless Log Insights</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Serverless Log Insights</h1>
+    <p>Ingest CSV logs and visualize counts per source. Terminal-first, Azure free-tier.</p>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>Ingest CSV</h2>
+      <textarea id="csvInput" rows="6" placeholder="id,source,message\n1,app,hello"></textarea>
+      <div class="row">
+        <button id="ingestBtn">Send CSV to API</button>
+        <span id="ingestStatus"></span>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Dashboard</h2>
+      <canvas id="sourceChart" height="150"></canvas>
+      <div class="row">
+        <button id="refreshBtn">Refresh</button>
+        <span id="refreshStatus"></span>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <small>Repo: your-username/serverless-log-insights | Built with terminal + nano</small>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
